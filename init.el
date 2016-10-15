@@ -92,6 +92,17 @@ Version 2015-01-26"
 (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
 					; when Smex is auto-initialized on its first run.
 
+(require 'tramp)
+(cond
+ ((eq system-type 'windows-nt)
+  (setq tramp-default-method "plink"
+        tramp-password-end-of-line "\r\n"))
+ ((eq system-type 'gnu/linux)
+  (setq tramp-default-method "ssh")))
+(setq tramp-default-user "traeyee"
+	 tramp-default-host "123.206.56.153")
+(setq password-cache-expiry 36000)
+
 ;;Managing the customized keys .
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
