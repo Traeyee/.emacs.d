@@ -26,7 +26,7 @@
      (awk-mode . "awk")
      (other . "gnu"))))
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes (quote (molokai)))
+ '(custom-enabled-themes (quote (misterioso)))
  '(custom-safe-themes
    (quote
     ("c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "7fd9485fe89665c4b352e9dd018fd557820dc26b7eaf584ad527128e41074333" "1b81d2d586c03e5167fe6a99504738dbef4f05d6fc556873e8ffcaba1aad4e6e" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
