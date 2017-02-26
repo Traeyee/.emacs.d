@@ -14,6 +14,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+;; '(ac-auto-start t)
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
@@ -38,7 +39,8 @@
  '(make-backup-files nil)
  '(recentf-mode t)
  '(show-paren-mode t)
- '(show-paren-style (quote mixed)))
+ '(show-paren-style (quote mixed))
+ '(yas-global-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -77,7 +79,7 @@ Version 2015-01-26"
          (lambda (fPath) (let ((process-connection-type nil)) (start-process "" nil "xdg-open" fPath))) ξfile-list))))))
 
 
- ;; Managing packages .
+;; Managing packages .
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list
@@ -86,7 +88,7 @@ Version 2015-01-26"
    t)
   (package-initialize))
 
- ;; Managing plug-ins .
+;; Managing plug-ins .
 (require 'unicad)
 (require 'smex) ; Not needed if you use package.el
 (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
@@ -100,7 +102,7 @@ Version 2015-01-26"
  ((eq system-type 'gnu/linux)
   (setq tramp-default-method "ssh")))
 (setq tramp-default-user "traeyee"
-	 tramp-default-host "123.206.56.153")
+      tramp-default-host "123.206.56.153")
 (setq password-cache-expiry 36000)
 
 ;;Managing the customized keys .
@@ -115,240 +117,240 @@ Version 2015-01-26"
 
 
 (defconst cstyle
-	     '((c-basic-offset . 4)	; Guessed value
-	       (c-offsets-alist
-		(access-label . 0)	; Guessed value
-		(block-close . 0)	; Guessed value
-		(class-close . 0)	; Guessed value
-		(class-open . 0)	; Guessed value
-		(defun-block-intro . +)	; Guessed value
-		(defun-close . 0)	; Guessed value
-		(defun-open . 0)	; Guessed value
-		(inclass . +)		; Guessed value
-		(member-init-intro . +)	    ; Guessed value
-		(statement . 0)		    ; Guessed value
-		(statement-block-intro . +) ; Guessed value
-		(substatement . +)	; Guessed value
-		(topmost-intro . 0)	; Guessed value
-		(topmost-intro-cont . 0) ; Guessed value
-		(annotation-top-cont . 0)
-		(annotation-var-cont . +)
-		(arglist-close . c-lineup-close-paren)
-		(arglist-cont c-lineup-gcc-asm-reg 0)
-		(arglist-cont-nonempty . c-lineup-arglist)
-		(arglist-intro . +)
-		(block-open . 0)
-		(brace-entry-open . 0)
-		(brace-list-close . 0)
-		(brace-list-entry . 0)
-		(brace-list-intro . +)
-		(brace-list-open . 0)
-		(c . c-lineup-C-comments)
-		(case-label . 0)
-		(catch-clause . 0)
-		(comment-intro . c-lineup-comment)
-		(composition-close . 0)
-		(composition-open . 0)
-		(cpp-define-intro c-lineup-cpp-define +)
-		(cpp-macro . -1000)
-		(cpp-macro-cont . +)
-		(do-while-closure . 0)
-		(else-clause . 0)
-		(extern-lang-close . 0)
-		(extern-lang-open . 0)
-		(friend . 0)
-		(func-decl-cont . +)
-		(incomposition . +)
-		(inexpr-class . +)
-		(inexpr-statement . +)
-		(inextern-lang . +)
-		(inher-cont . c-lineup-multi-inher)
-		(inher-intro . +)
-		(inlambda . c-lineup-inexpr-block)
-		(inline-close . 0)
-		(inline-open . +)
-		(inmodule . +)
-		(innamespace . +)
-		(knr-argdecl . 0)
-		(knr-argdecl-intro . +)
-		(label . 2)
-		(lambda-intro-cont . +)
-		(member-init-cont . c-lineup-multi-inher)
-		(module-close . 0)
-		(module-open . 0)
-		(namespace-close . 0)
-		(namespace-open . 0)
-		(objc-method-args-cont . c-lineup-ObjC-method-args)
-		(objc-method-call-cont c-lineup-ObjC-method-call-colons c-lineup-ObjC-method-call +)
-		(objc-method-intro .
-				   [0])
-		(statement-case-intro . +)
-		(statement-case-open . 0)
-		(statement-cont . +)
-		(stream-op . c-lineup-streamop)
-		(string . -1000)
-		(substatement-label . 2)
-		(substatement-open . +)
-		(template-args-cont c-lineup-template-args +))))
+  '((c-basic-offset . 4)	; Guessed value
+    (c-offsets-alist
+     (access-label . 0)	; Guessed value
+     (block-close . 0)	; Guessed value
+     (class-close . 0)	; Guessed value
+     (class-open . 0)	; Guessed value
+     (defun-block-intro . +)	; Guessed value
+     (defun-close . 0)	; Guessed value
+     (defun-open . 0)	; Guessed value
+     (inclass . +)		; Guessed value
+     (member-init-intro . +)	    ; Guessed value
+     (statement . 0)		    ; Guessed value
+     (statement-block-intro . +) ; Guessed value
+     (substatement . +)	; Guessed value
+     (topmost-intro . 0)	; Guessed value
+     (topmost-intro-cont . 0) ; Guessed value
+     (annotation-top-cont . 0)
+     (annotation-var-cont . +)
+     (arglist-close . c-lineup-close-paren)
+     (arglist-cont c-lineup-gcc-asm-reg 0)
+     (arglist-cont-nonempty . c-lineup-arglist)
+     (arglist-intro . +)
+     (block-open . 0)
+     (brace-entry-open . 0)
+     (brace-list-close . 0)
+     (brace-list-entry . 0)
+     (brace-list-intro . +)
+     (brace-list-open . 0)
+     (c . c-lineup-C-comments)
+     (case-label . 0)
+     (catch-clause . 0)
+     (comment-intro . c-lineup-comment)
+     (composition-close . 0)
+     (composition-open . 0)
+     (cpp-define-intro c-lineup-cpp-define +)
+     (cpp-macro . -1000)
+     (cpp-macro-cont . +)
+     (do-while-closure . 0)
+     (else-clause . 0)
+     (extern-lang-close . 0)
+     (extern-lang-open . 0)
+     (friend . 0)
+     (func-decl-cont . +)
+     (incomposition . +)
+     (inexpr-class . +)
+     (inexpr-statement . +)
+     (inextern-lang . +)
+     (inher-cont . c-lineup-multi-inher)
+     (inher-intro . +)
+     (inlambda . c-lineup-inexpr-block)
+     (inline-close . 0)
+     (inline-open . +)
+     (inmodule . +)
+     (innamespace . +)
+     (knr-argdecl . 0)
+     (knr-argdecl-intro . +)
+     (label . 2)
+     (lambda-intro-cont . +)
+     (member-init-cont . c-lineup-multi-inher)
+     (module-close . 0)
+     (module-open . 0)
+     (namespace-close . 0)
+     (namespace-open . 0)
+     (objc-method-args-cont . c-lineup-ObjC-method-args)
+     (objc-method-call-cont c-lineup-ObjC-method-call-colons c-lineup-ObjC-method-call +)
+     (objc-method-intro .
+			[0])
+     (statement-case-intro . +)
+     (statement-case-open . 0)
+     (statement-cont . +)
+     (stream-op . c-lineup-streamop)
+     (string . -1000)
+     (substatement-label . 2)
+     (substatement-open . +)
+     (template-args-cont c-lineup-template-args +))))
 (c-add-style "cStyle" cstyle)
 
 (defconst cppstyle
-	     '((c-basic-offset . 4)	; Guessed value
-	       (c-offsets-alist
-		(access-label . 0)	; Guessed value
-		(block-close . 0)	; Guessed value
-		(class-close . 0)	; Guessed value
-		(class-open . 0)	; Guessed value
-		(defun-block-intro . +)	; Guessed value
-		(defun-close . 0)	; Guessed value
-		(defun-open . 0)	; Guessed value
-		(inclass . +)		; Guessed value
-		(member-init-intro . +)	    ; Guessed value
-		(statement . 0)		    ; Guessed value
-		(statement-block-intro . +) ; Guessed value
-		(substatement . +)	; Guessed value
-		(topmost-intro . 0)	; Guessed value
-		(topmost-intro-cont . 0) ; Guessed value
-		(annotation-top-cont . 0)
-		(annotation-var-cont . +)
-		(arglist-close . c-lineup-close-paren)
-		(arglist-cont c-lineup-gcc-asm-reg 0)
-		(arglist-cont-nonempty . c-lineup-arglist)
-		(arglist-intro . +)
-		(block-open . 0)
-		(brace-entry-open . 0)
-		(brace-list-close . 0)
-		(brace-list-entry . 0)
-		(brace-list-intro . +)
-		(brace-list-open . 0)
-		(c . c-lineup-C-comments)
-		(case-label . 0)
-		(catch-clause . 0)
-		(comment-intro . c-lineup-comment)
-		(composition-close . 0)
-		(composition-open . 0)
-		(cpp-define-intro c-lineup-cpp-define +)
-		(cpp-macro . -1000)
-		(cpp-macro-cont . +)
-		(do-while-closure . 0)
-		(else-clause . 0)
-		(extern-lang-close . 0)
-		(extern-lang-open . 0)
-		(friend . 0)
-		(func-decl-cont . +)
-		(incomposition . +)
-		(inexpr-class . +)
-		(inexpr-statement . +)
-		(inextern-lang . +)
-		(inher-cont . c-lineup-multi-inher)
-		(inher-intro . +)
-		(inlambda . c-lineup-inexpr-block)
-		(inline-close . 0)
-		(inline-open . +)
-		(inmodule . +)
-		(innamespace . +)
-		(knr-argdecl . 0)
-		(knr-argdecl-intro . +)
-		(label . 2)
-		(lambda-intro-cont . +)
-		(member-init-cont . c-lineup-multi-inher)
-		(module-close . 0)
-		(module-open . 0)
-		(namespace-close . 0)
-		(namespace-open . 0)
-		(objc-method-args-cont . c-lineup-ObjC-method-args)
-		(objc-method-call-cont c-lineup-ObjC-method-call-colons c-lineup-ObjC-method-call +)
-		(objc-method-intro .
-				   [0])
-		(statement-case-intro . +)
-		(statement-case-open . 0)
-		(statement-cont . +)
-		(stream-op . c-lineup-streamop)
-		(string . -1000)
-		(substatement-label . 2)
-		(substatement-open . +)
-		(template-args-cont c-lineup-template-args +))))
+  '((c-basic-offset . 4)	; Guessed value
+    (c-offsets-alist
+     (access-label . 0)	; Guessed value
+     (block-close . 0)	; Guessed value
+     (class-close . 0)	; Guessed value
+     (class-open . 0)	; Guessed value
+     (defun-block-intro . +)	; Guessed value
+     (defun-close . 0)	; Guessed value
+     (defun-open . 0)	; Guessed value
+     (inclass . +)		; Guessed value
+     (member-init-intro . +)	    ; Guessed value
+     (statement . 0)		    ; Guessed value
+     (statement-block-intro . +) ; Guessed value
+     (substatement . +)	; Guessed value
+     (topmost-intro . 0)	; Guessed value
+     (topmost-intro-cont . 0) ; Guessed value
+     (annotation-top-cont . 0)
+     (annotation-var-cont . +)
+     (arglist-close . c-lineup-close-paren)
+     (arglist-cont c-lineup-gcc-asm-reg 0)
+     (arglist-cont-nonempty . c-lineup-arglist)
+     (arglist-intro . +)
+     (block-open . 0)
+     (brace-entry-open . 0)
+     (brace-list-close . 0)
+     (brace-list-entry . 0)
+     (brace-list-intro . +)
+     (brace-list-open . 0)
+     (c . c-lineup-C-comments)
+     (case-label . 0)
+     (catch-clause . 0)
+     (comment-intro . c-lineup-comment)
+     (composition-close . 0)
+     (composition-open . 0)
+     (cpp-define-intro c-lineup-cpp-define +)
+     (cpp-macro . -1000)
+     (cpp-macro-cont . +)
+     (do-while-closure . 0)
+     (else-clause . 0)
+     (extern-lang-close . 0)
+     (extern-lang-open . 0)
+     (friend . 0)
+     (func-decl-cont . +)
+     (incomposition . +)
+     (inexpr-class . +)
+     (inexpr-statement . +)
+     (inextern-lang . +)
+     (inher-cont . c-lineup-multi-inher)
+     (inher-intro . +)
+     (inlambda . c-lineup-inexpr-block)
+     (inline-close . 0)
+     (inline-open . +)
+     (inmodule . +)
+     (innamespace . +)
+     (knr-argdecl . 0)
+     (knr-argdecl-intro . +)
+     (label . 2)
+     (lambda-intro-cont . +)
+     (member-init-cont . c-lineup-multi-inher)
+     (module-close . 0)
+     (module-open . 0)
+     (namespace-close . 0)
+     (namespace-open . 0)
+     (objc-method-args-cont . c-lineup-ObjC-method-args)
+     (objc-method-call-cont c-lineup-ObjC-method-call-colons c-lineup-ObjC-method-call +)
+     (objc-method-intro .
+			[0])
+     (statement-case-intro . +)
+     (statement-case-open . 0)
+     (statement-cont . +)
+     (stream-op . c-lineup-streamop)
+     (string . -1000)
+     (substatement-label . 2)
+     (substatement-open . +)
+     (template-args-cont c-lineup-template-args +))))
 (c-add-style "cppStyle" cppstyle)
 
 
 (defconst ms-style
-	     '((c-basic-offset . 4)	; Guessed value
-	       (c-offsets-alist
-		(access-label . 0)	; Guessed value
-		(arglist-intro . +)	; Guessed value
-		(block-close . 0)	; Guessed value
-		(class-close . 0)	; Guessed value
-		(class-open . 0)	; Guessed value
-		(defun-block-intro . +)	; Guessed value
-		(defun-close . 0)	; Guessed value
-		(defun-open . 0)	; Guessed value
-		(else-clause . 0)	; Guessed value
-		(inclass . +)		; Guessed value
-		(statement . 0)		    ; Guessed value
-		(statement-block-intro . +) ; Guessed value
-		(substatement . +)	    ; Guessed value
-		(substatement-open . 0)	; Guessed value
-		(topmost-intro . 0)	; Guessed value
-		(annotation-top-cont . 0)
-		(annotation-var-cont . +)
-		(arglist-close . c-lineup-close-paren)
-		(arglist-cont c-lineup-gcc-asm-reg 0)
-		(arglist-cont-nonempty . c-lineup-arglist)
-		(block-open . 0)
-		(brace-entry-open . 0)
-		(brace-list-close . 0)
-		(brace-list-entry . 0)
-		(brace-list-intro . +)
-		(brace-list-open . 0)
-		(c . c-lineup-C-comments)
-		(case-label . 0)
-		(catch-clause . 0)
-		(comment-intro . c-lineup-comment)
-		(composition-close . 0)
-		(composition-open . 0)
-		(cpp-define-intro c-lineup-cpp-define +)
-		(cpp-macro . -1000)
-		(cpp-macro-cont . +)
-		(do-while-closure . 0)
-		(extern-lang-close . 0)
-		(extern-lang-open . 0)
-		(friend . 0)
-		(func-decl-cont . +)
-		(incomposition . +)
-		(inexpr-class . +)
-		(inexpr-statement . +)
-		(inextern-lang . +)
-		(inher-cont . c-lineup-multi-inher)
-		(inher-intro . +)
-		(inlambda . c-lineup-inexpr-block)
-		(inline-close . 0)
-		(inline-open . +)
-		(inmodule . +)
-		(innamespace . +)
-		(knr-argdecl . 0)
-		(knr-argdecl-intro . +)
-		(label . 2)
-		(lambda-intro-cont . +)
-		(member-init-cont . c-lineup-multi-inher)
-		(member-init-intro . +)
-		(module-close . 0)
-		(module-open . 0)
-		(namespace-close . 0)
-		(namespace-open . 0)
-		(objc-method-args-cont . c-lineup-ObjC-method-args)
-		(objc-method-call-cont c-lineup-ObjC-method-call-colons c-lineup-ObjC-method-call +)
-		(objc-method-intro .
-				   [0])
-		(statement-case-intro . +)
-		(statement-case-open . 0)
-		(statement-cont . +)
-		(stream-op . c-lineup-streamop)
-		(string . -1000)
-		(substatement-label . 2)
-		(template-args-cont c-lineup-template-args +)
-		(topmost-intro-cont . c-lineup-topmost-intro-cont))))
+  '((c-basic-offset . 4)	; Guessed value
+    (c-offsets-alist
+     (access-label . 0)	; Guessed value
+     (arglist-intro . +)	; Guessed value
+     (block-close . 0)	; Guessed value
+     (class-close . 0)	; Guessed value
+     (class-open . 0)	; Guessed value
+     (defun-block-intro . +)	; Guessed value
+     (defun-close . 0)	; Guessed value
+     (defun-open . 0)	; Guessed value
+     (else-clause . 0)	; Guessed value
+     (inclass . +)		; Guessed value
+     (statement . 0)		    ; Guessed value
+     (statement-block-intro . +) ; Guessed value
+     (substatement . +)	    ; Guessed value
+     (substatement-open . 0)	; Guessed value
+     (topmost-intro . 0)	; Guessed value
+     (annotation-top-cont . 0)
+     (annotation-var-cont . +)
+     (arglist-close . c-lineup-close-paren)
+     (arglist-cont c-lineup-gcc-asm-reg 0)
+     (arglist-cont-nonempty . c-lineup-arglist)
+     (block-open . 0)
+     (brace-entry-open . 0)
+     (brace-list-close . 0)
+     (brace-list-entry . 0)
+     (brace-list-intro . +)
+     (brace-list-open . 0)
+     (c . c-lineup-C-comments)
+     (case-label . 0)
+     (catch-clause . 0)
+     (comment-intro . c-lineup-comment)
+     (composition-close . 0)
+     (composition-open . 0)
+     (cpp-define-intro c-lineup-cpp-define +)
+     (cpp-macro . -1000)
+     (cpp-macro-cont . +)
+     (do-while-closure . 0)
+     (extern-lang-close . 0)
+     (extern-lang-open . 0)
+     (friend . 0)
+     (func-decl-cont . +)
+     (incomposition . +)
+     (inexpr-class . +)
+     (inexpr-statement . +)
+     (inextern-lang . +)
+     (inher-cont . c-lineup-multi-inher)
+     (inher-intro . +)
+     (inlambda . c-lineup-inexpr-block)
+     (inline-close . 0)
+     (inline-open . +)
+     (inmodule . +)
+     (innamespace . +)
+     (knr-argdecl . 0)
+     (knr-argdecl-intro . +)
+     (label . 2)
+     (lambda-intro-cont . +)
+     (member-init-cont . c-lineup-multi-inher)
+     (member-init-intro . +)
+     (module-close . 0)
+     (module-open . 0)
+     (namespace-close . 0)
+     (namespace-open . 0)
+     (objc-method-args-cont . c-lineup-ObjC-method-args)
+     (objc-method-call-cont c-lineup-ObjC-method-call-colons c-lineup-ObjC-method-call +)
+     (objc-method-intro .
+			[0])
+     (statement-case-intro . +)
+     (statement-case-open . 0)
+     (statement-cont . +)
+     (stream-op . c-lineup-streamop)
+     (string . -1000)
+     (substatement-label . 2)
+     (template-args-cont c-lineup-template-args +)
+     (topmost-intro-cont . c-lineup-topmost-intro-cont))))
 (c-add-style "ms-style" ms-style)
 
-
-
 ;; (enable-theme 'solarized)
+(require 'auto-complete)
+(global-auto-complete-mode t)
