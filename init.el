@@ -18,10 +18,11 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
+ '(c-basic-offset (quote set-from-style))
  '(c-default-style
    (quote
-    ((c-mode . "ms-style")
-     (c++-mode . "ms-style")
+    ((c-mode . "user")
+     (c++-mode . "user")
      (java-mode . "java")
      (awk-mode . "awk")
      (other . "gnu"))))
@@ -45,7 +46,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family #("华文细黑" 0 4 (charset chinese-gbk)) :foundry "outline" :slant normal :weight normal :height 143 :width normal)))))
+ '(default ((t (:family "Constantia" :foundry "outline" :slant normal :weight normal :height 143 :width normal)))))
 
 ;;Open file in external app
 (defun xah-open-in-external-app ()
@@ -353,3 +354,4 @@ Version 2015-01-26"
 ;; (enable-theme 'solarized)
 (require 'auto-complete)
 (global-auto-complete-mode t)
+(electric-pair-mode t)
