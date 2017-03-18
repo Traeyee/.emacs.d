@@ -148,8 +148,10 @@ Version 2015-01-26"
 ;; If there is more than one, they won't work right.
 
 
-(cond (system-type 'windows-nt) (custom-set-faces
-				 '(default ((t (:family "Constantia" :foundry "outline" :slant normal :weight normal :height 143 :width normal)))))
+(cond ((eq system-type 'windows-nt) (custom-set-faces
+      '(default ((t (:family "Constantia" :foundry "outline" :slant normal :weight normal :height 143 :width normal))))))
+      ((eq system-type 'gnu/linux) (custom-set-faces
+      '(default ((t (:family "Courier 10 Pitch" :foundry "bitstream" :slant normal :weight normal :height 143 :width normal))))))
       (t nil))
       
 
