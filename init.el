@@ -4,11 +4,37 @@
 ;; accomplish the true initialization
 ;; You should put this file in the **default** HOME directory right after
 ;; emacs is installed
-(setenv "HOME" "c:/eHome") ;; you can change this dir to the place you like
+
+(if (eq system-type 'windows-nt)
+   (setenv "HOME" "c:/eHome")) ;; you can change this dir to the place you like
+
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized-master")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
+
+;; Managing packages . ----------------------------------------------------------------------------
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   '("melpa" . "http://melpa.org/packages/")
+   t)
+  (package-initialize))
+
+
+;; Managing plug-ins . ----------------------------------------------------------------------------------
+(require 'unicad)
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+					; when Smex is auto-initialized on its first run.
+
+(require 'tramp)
+(require 'auto-complete)
+
+;; ------------------------------------------------------------------------------------------------------
 ;; (load-theme 'solarized t)
+;; (enable-theme 'solarized)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -40,13 +66,37 @@
  '(recentf-mode t)
  '(show-paren-mode t)
  '(show-paren-style (quote mixed))
- '(yas-global-mode t))
+ '(yas-global-mode t)
+ '(global-auto-complete-mode t)
+ '(electric-pair-mode t))
+
+
+
+
+;;Managing the customized keys . ------------------------------------------------------------------
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+;; set F7 to list recently opened file
+(global-set-key (kbd "<f7>") 'recentf-open-files)
+(global-set-key (kbd "<f9>") 'smart-compile)
+(global-set-key (kbd "<C-return>") 'xah-open-in-external-app)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Constantia" :foundry "outline" :slant normal :weight normal :height 143 :width normal)))))
+
+
+
+
+;; -----------------------------------------------------------------------------------------------------------
+
+
+
+
 
 ;;Open file in external app
 (defun xah-open-in-external-app ()
@@ -79,22 +129,11 @@ Version 2015-01-26"
          (lambda (fPath) (let ((process-connection-type nil)) (start-process "" nil "xdg-open" fPath))) ξfile-list))))))
 
 
-;; Managing packages .
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (add-to-list
-   'package-archives
-   '("melpa" . "http://melpa.org/packages/")
-   t)
-  (package-initialize))
 
-;; Managing plug-ins .
-(require 'unicad)
-(require 'smex) ; Not needed if you use package.el
-(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
-					; when Smex is auto-initialized on its first run.
 
-(require 'tramp)
+
+
+
 (cond
  ((eq system-type 'windows-nt)
   (setq tramp-default-method "plink"
@@ -105,16 +144,17 @@ Version 2015-01-26"
       tramp-default-host "123.206.56.153")
 (setq password-cache-expiry 36000)
 
-;;Managing the customized keys .
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-;; set F7 to list recently opened file
-(global-set-key (kbd "<f7>") 'recentf-open-files)
-(global-set-key (kbd "<f9>") 'smart-compile)
-(global-set-key (kbd "<C-return>") 'xah-open-in-external-app)
 
+
+
+
+
+
+
+
+
+
+;; coding-style ---------------------------------------------------------------------
 
 (defconst cstyle
   '((c-basic-offset . 4)	; Guessed value
@@ -350,8 +390,3 @@ Version 2015-01-26"
      (template-args-cont c-lineup-template-args +)
      (topmost-intro-cont . c-lineup-topmost-intro-cont))))
 (c-add-style "ms-style" ms-style)
-
-;; (enable-theme 'solarized)
-(require 'auto-complete)
-(global-auto-complete-mode t)
-(electric-pair-mode t)
