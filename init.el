@@ -10,8 +10,6 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 
-(if (eq system-type 'windows-nt)
-    (setenv "HOME" "c:/eHome")) ;; you can change this dir to the place you like
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized-master")
@@ -66,7 +64,7 @@
  '(custom-enabled-themes (quote (ample-zen)))
  '(custom-safe-themes
    (quote
-    ("ace9f12e0c00f983068910d9025eefeb5ea7a711e774ee8bb2af5f7376018ad2" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "7fd9485fe89665c4b352e9dd018fd557820dc26b7eaf584ad527128e41074333" "1b81d2d586c03e5167fe6a99504738dbef4f05d6fc556873e8ffcaba1aad4e6e" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
+    ("093d85edf60d960aaab0faa1b72c274eb36f4df93983969aea0aeecb3a7f9e76" "ace9f12e0c00f983068910d9025eefeb5ea7a711e774ee8bb2af5f7376018ad2" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "7fd9485fe89665c4b352e9dd018fd557820dc26b7eaf584ad527128e41074333" "1b81d2d586c03e5167fe6a99504738dbef4f05d6fc556873e8ffcaba1aad4e6e" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(electric-pair-mode t)
  '(frame-background-mode (quote dark))
  '(global-auto-complete-mode t)
@@ -409,3 +407,9 @@ p     (objc-method-call-cont c-lineup-ObjC-method-call-colons c-lineup-ObjC-meth
      (template-args-cont c-lineup-template-args +)
      (topmost-intro-cont . c-lineup-topmost-intro-cont))))
 (c-add-style "ms-style" ms-style)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family #("Adobe 黑体 Std R" 6 14 (charset chinese-gbk)) :foundry "outline" :slant normal :weight normal :height 143 :width normal)))))
