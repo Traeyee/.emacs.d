@@ -1,10 +1,3 @@
-;; This file is only for windows 7/8/8.1
-;; The only thing it does is to set the HOME directories for emacs,
-;; then trigger the init.el in the directory specified by HOME to
-;; accomplish the true initialization
-;; You should put this file in the **default** HOME directory right after
-;; emacs is installed
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -160,8 +153,7 @@ Version 2015-01-26"
 				     ;; If you edit it by hand, you could mess it up, so be careful.
 				     ;; Your init file should contain only one such instance.
 				     ;; If there is more than one, they won't work right.
-				     '(default ((t (:family #("Adobe 黑体 Std R" 6 14 (charset chinese-gbk)) :foundry "outline" :slant normal :weight normal :height 143 :width normal)))))
-       )
+				     '(default ((t (:family "Source Code Pro Semibold" :foundry "outline" :slant normal :weight semi-bold :height 141 :width normal))))))
       ((eq system-type 'gnu/linux) (custom-set-faces
 				    '(default ((t (:family "Courier 10 Pitch" :foundry "bitstream" :slant normal :weight normal :height 143 :width normal))))))
       (t nil))
@@ -407,9 +399,3 @@ p     (objc-method-call-cont c-lineup-ObjC-method-call-colons c-lineup-ObjC-meth
      (template-args-cont c-lineup-template-args +)
      (topmost-intro-cont . c-lineup-topmost-intro-cont))))
 (c-add-style "ms-style" ms-style)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family #("Adobe 黑体 Std R" 6 14 (charset chinese-gbk)) :foundry "outline" :slant normal :weight normal :height 143 :width normal)))))
