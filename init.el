@@ -12,7 +12,7 @@
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(add-to-list 'load-path "~/myelpa/")
+;; (add-to-list 'load-path "~/myelpa/")
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized-master")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
@@ -24,6 +24,9 @@
    '("melpa" . "http://melpa.org/packages/")
    t)
   (package-initialize))
+
+
+(windmove-default-keybindings)
 
 ;; Managing plug-ins . ----------------------------------------------------------------------------------
 (require 'unicad)
@@ -45,15 +48,21 @@
  '(custom-safe-themes
    (quote
     ("ace9f12e0c00f983068910d9025eefeb5ea7a711e774ee8bb2af5f7376018ad2" default)))
- '(electric-pair-mode t)
  '(inhibit-startup-screen t)
- '(show-paren-mode t))
+ '(electric-pair-mode t)
+ '(show-paren-mode t)
+ '(global-linum-mode t))
 
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;; (global-set-key (kbd "M-<up>") 'windmove-up)              ; move to upper window
+;; (global-set-key (kbd "M-<down>") 'windmove-down)          ; move to lower window
+;; (global-set-key (kbd "M-<left>") 'windmove-left)              ; move to leftper window
+;; (global-set-key (kbd "M-<right>") 'windmove-right)          ; move to lower window
 
 
 (custom-set-faces
