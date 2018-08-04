@@ -12,6 +12,7 @@
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'exec-path "~/bin")
 ;; (add-to-list 'load-path "~/myelpa/")
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized-master")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
@@ -33,7 +34,8 @@
 (require 'smex) ; Not needed if you use package.el
 ;; (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
                                         ; when Smex is auto-initialized on its first run.
-
+(require 'my-setup-ggtags)
+(require 'google-c-style)
 ;; (require 'tramp)
 ;; (require 'auto-complete)
 
@@ -52,6 +54,10 @@
  '(electric-pair-mode t)
  '(show-paren-mode t)
  '(global-linum-mode t))
+
+
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 
 (global-set-key (kbd "M-x") 'smex)
