@@ -15,7 +15,6 @@
 (let ((default-directory  "~/.emacs.d/lisp/"))
     (normal-top-level-add-subdirs-to-load-path))
 (add-to-list 'exec-path "~/bin")
-;; (add-to-list 'load-path "~/myelpa/")
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized-master")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
@@ -28,10 +27,9 @@
    t)
   (package-initialize))
 
+
 (load-file "~/.emacs.d/setup-lisp.el")
 (load-file "~/.emacs.d/setup-elpa.el")
-
-(windmove-default-keybindings)
 ;; Managing plug-ins . ----------------------------------------------------------------------------------
 (require 'unicad)
 (require 'smex) ; Not needed if you use package.el
@@ -42,7 +40,7 @@
 ;; (require 'company)
 ;; (require 'setup-irony)
 ;; (require 'my-setup-ggtags)
-(require 'google-c-style)
+(require 'bytedance-c-style)
 ;; (require 'tramp)
 ;; (require 'auto-complete)
 ;; --------------------------------------------------------------------------------------------------------
@@ -70,10 +68,13 @@
  )
 
 
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+(add-hook 'c-mode-common-hook 'bytedance-set-c-style)
+(add-hook 'c-mode-common-hook 'bytedance-make-newline-indent)
 
 (add-hook 'after-init-hook 'global-company-mode)
+
+
+(windmove-default-keybindings)
 
 
 (global-set-key (kbd "M-x") 'smex)
@@ -82,6 +83,8 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (global-set-key (kbd "M-_") 'beginning-of-buffer)
 (global-set-key (kbd "M-+") 'end-of-buffer)
+(global-set-key (kbd "M-{") 'scroll-other-window-down)
+(global-set-key (kbd "M-}") 'scroll-other-window)
 
 ;; (global-set-key (kbd "M-<up>") 'windmove-up)              ; move to upper window
 ;; (global-set-key (kbd "M-<down>") 'windmove-down)          ; move to lower window

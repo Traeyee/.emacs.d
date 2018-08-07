@@ -499,7 +499,7 @@ Set to nil to disable tag highlighting."
                       'has-refs)))
               ;; http://thread.gmane.org/gmane.comp.gnu.global.bugs/1518
               (has-path-style
-               (and (ggtags-process-succeed-p "global" "--path-style" "shorter" "--help")
+               (and (ggtags-process-succeed-p "global" "--path-style" "relative" "--help")  ;; It's shorter initially
                     'has-path-style))
               ;; http://thread.gmane.org/gmane.comp.gnu.global.bugs/1542
               (has-color (and (ggtags-process-succeed-p "global" "--color" "--help")
@@ -920,7 +920,7 @@ blocking emacs."
                           (and (ggtags-sort-by-nearness-p) "--nearness=.")
                           (and (ggtags-find-project)
                                (ggtags-project-has-path-style (ggtags-find-project))
-                               "--path-style=shorter")
+                               "--path-style=relative")  ;; It's shorter initially
                           (and ggtags-global-treat-text "--other")
                           (pcase cmd
                             ((pred stringp) cmd)

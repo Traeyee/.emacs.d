@@ -1,4 +1,7 @@
 (require 'projectile)
+(require 'setup-ggtags)
+(require 'setup-irony)
+
 
 (projectile-mode)
 (eval-after-load 'flycheck
