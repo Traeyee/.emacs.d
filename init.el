@@ -28,9 +28,10 @@
    t)
   (package-initialize))
 
+(load-file "~/.emacs.d/setup-lisp.el")
+(load-file "~/.emacs.d/setup-elpa.el")
 
 (windmove-default-keybindings)
-
 ;; Managing plug-ins . ----------------------------------------------------------------------------------
 (require 'unicad)
 (require 'smex) ; Not needed if you use package.el
@@ -44,8 +45,6 @@
 (require 'google-c-style)
 ;; (require 'tramp)
 ;; (require 'auto-complete)
-
-(require 'setup-elpa)
 ;; --------------------------------------------------------------------------------------------------------
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
