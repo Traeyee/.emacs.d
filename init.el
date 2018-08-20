@@ -37,11 +37,9 @@
                                         ; when Smex is auto-initialized on its first run.
 ;; (require 'cc-mode)
 ;; (require 'semantic)
-;; (require 'company)
-;; (require 'setup-irony)
+(require 'company)
 ;; (require 'my-setup-ggtags)
 (require 'bytedance-c-style)
-;; (require 'tramp)
 ;; (require 'auto-complete)
 ;; --------------------------------------------------------------------------------------------------------
 (custom-set-variables
