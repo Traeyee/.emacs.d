@@ -32,6 +32,7 @@
 (load-file "~/.emacs.d/setup-elpa.el")
 ;; Managing plug-ins . ----------------------------------------------------------------------------------
 (require 'unicad)
+(require 'window-number)
 (require 'smex) ; Not needed if you use package.el
 ;; (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
                                         ; when Smex is auto-initialized on its first run.
@@ -71,6 +72,8 @@
 
 (add-hook 'after-init-hook 'global-company-mode)
 
+(window-number-mode)
+(winner-mode)
 
 (windmove-default-keybindings)
 
