@@ -51,18 +51,19 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+
  '(current-language-environment "UTF-8")
  '(custom-enabled-themes (quote (ample-zen)))
  '(custom-safe-themes
    (quote
     ("ace9f12e0c00f983068910d9025eefeb5ea7a711e774ee8bb2af5f7376018ad2" default)))
  '(electric-pair-mode t)
- '(elpy-rpc-virtualenv-path "")
  '(global-linum-mode t)
  '(inhibit-startup-screen t)
+ '(company-idle-delay 0.1)
  '(package-selected-packages (quote (elpy ## flycheck company-irony)))
+ '(elpy-rpc-virtualenv-path "")
  '(show-paren-mode t))
-
 
 (add-hook 'c-mode-common-hook 'bytedance-set-c-style)
 (add-hook 'c-mode-common-hook 'bytedance-make-newline-indent)
