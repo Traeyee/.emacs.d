@@ -4,5 +4,8 @@
 (add-hook 'objc-mode-hook 'irony-mode)
 
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+;; elpy configure
+'(elpy-rpc-virtualenv-path "")
+(elpy-enable)
 ;; =================================
 

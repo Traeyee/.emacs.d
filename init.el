@@ -9,7 +9,8 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+
+;; (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (let ((default-directory  "~/.emacs.d/lisp/"))
@@ -19,13 +20,15 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 ;; Managing packages . ----------------------------------------------------------------------------
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (add-to-list
-   'package-archives
-   '("melpa" . "http://melpa.org/packages/")
-   t)
-  (package-initialize))
+;; (when (>= emacs-major-version 24)
+;;   (require 'package)
+;;   (add-to-list
+;;    'package-archives
+;;    '("melpa" . "http://melpa.org/packages/")
+;;    t))
+(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+(package-initialize)
 
 
 (load-file "~/.emacs.d/setup-lisp.el")
@@ -53,18 +56,12 @@
  '(custom-safe-themes
    (quote
     ("ace9f12e0c00f983068910d9025eefeb5ea7a711e774ee8bb2af5f7376018ad2" default)))
-
- ;; generral options
- '(inhibit-startup-screen t)
  '(electric-pair-mode t)
- '(show-paren-mode t)
+ '(elpy-rpc-virtualenv-path "")
  '(global-linum-mode t)
- 
- ;; semantic-related
- ;; '(global-semanticdb-minor-mode t)
- ;; '(global-semantic-idle-scheduler-mode t)
- ;; '(semantic-mode t)
- )
+ '(inhibit-startup-screen t)
+ '(package-selected-packages (quote (elpy ## flycheck company-irony)))
+ '(show-paren-mode t))
 
 
 (add-hook 'c-mode-common-hook 'bytedance-set-c-style)
