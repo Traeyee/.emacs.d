@@ -5,7 +5,7 @@
 
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 ;; elpy configure
-'(elpy-rpc-virtualenv-path "")
+(setq elpy-rpc-virtualenv-path "")
 (elpy-enable)
 ;; =================================
 
