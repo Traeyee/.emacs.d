@@ -15,7 +15,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (markdown-mode neotree elpy ## flycheck company-irony)))
+    (thrift markdown-mode neotree elpy ## flycheck company-irony)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
