@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-idle-delay 0.1)
- '(company-minimum-prefix-length 2)
+ '(company-minimum-prefix-length 1)
  '(current-language-environment "UTF-8")
  '(custom-enabled-themes (quote (ample-zen)))
  '(custom-safe-themes
@@ -15,7 +15,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (thrift markdown-mode neotree elpy ## flycheck company-irony)))
+    (cquery spinner gnu-elpa-keyring-update lsp-mode thrift markdown-mode neotree elpy ## flycheck company-irony)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -10,4 +10,5 @@
 (setq elpy-rpc-virtualenv-path "")
 (elpy-enable)
 ;; =================================
-
+;; cquery configure
+(setq cquery-executable "~/local/cquery/bin/cquery")

@@ -26,8 +26,13 @@
 ;;    'package-archives
 ;;    '("melpa" . "http://melpa.org/packages/")
 ;;    t))
-(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+;; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+;;                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+;; (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+;;                          ("melpa stable" . "https://stable.melpa.org/packages/")))
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+ 			 ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 (package-initialize)
 
 
