@@ -82,6 +82,8 @@
 ;; (global-set-key (kbd "M-<right>") 'windmove-right)          ; move to lower window
 
 
+(set-face-attribute 'default (selected-frame) :height 168)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
