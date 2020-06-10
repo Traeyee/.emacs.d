@@ -61,6 +61,7 @@
 
 (add-hook 'after-init-hook 'global-company-mode)
 
+(column-number-mode)
 (window-number-mode)
 (winner-mode)
 
