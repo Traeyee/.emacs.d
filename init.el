@@ -82,6 +82,8 @@
 ;; (global-set-key (kbd "M-<left>") 'windmove-left)              ; move to leftper window
 ;; (global-set-key (kbd "M-<right>") 'windmove-right)          ; move to lower window
 
+(define-coding-system-alias 'utf8 'utf-8)
+(define-coding-system-alias 'UTF-8'utf-8)
 
 (set-face-attribute 'default (selected-frame) :height 168)
 
