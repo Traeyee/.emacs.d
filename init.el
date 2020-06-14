@@ -64,6 +64,7 @@
 (column-number-mode)
 (window-number-mode)
 (winner-mode)
+(global-undo-tree-mode)
 
 (windmove-default-keybindings)
 
