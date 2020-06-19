@@ -8,6 +8,7 @@
 ;; (yas-global-mode 1)
 ;; elpy configure
 (setq elpy-rpc-virtualenv-path "")
+(setq elpy-rpc-timeout 10)
 (elpy-enable)
 ;; =================================
 ;; cquery configure
