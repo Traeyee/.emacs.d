@@ -9,6 +9,7 @@
 ;; elpy configure
 (setq elpy-rpc-virtualenv-path "")
 (setq elpy-rpc-timeout 10)
+(setq elpy-rpc-ignored-buffer-size 1024000)  ;; 1MB
 (elpy-enable)
 ;; =================================
 ;; cquery configure
