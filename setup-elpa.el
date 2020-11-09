@@ -6,6 +6,7 @@
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 ;; yasnippet configure
 ;; (yas-global-mode 1)
+(add-hook 'sh-mode-hook 'yas-minor-mode)
 ;; elpy configure
 (setq elpy-rpc-virtualenv-path "")
 (setq elpy-rpc-timeout 10)
