@@ -14,7 +14,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (let ((default-directory  "~/.emacs.d/lisp/"))
-    (normal-top-level-add-subdirs-to-load-path))
+  (normal-top-level-add-subdirs-to-load-path))
 (add-to-list 'exec-path "~/bin")
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized-master")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
@@ -26,13 +26,14 @@
 ;;    'package-archives
 ;;    '("melpa" . "http://melpa.org/packages/")
 ;;    t))
-;; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 ;; (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
 ;;                          ("melpa stable" . "https://stable.melpa.org/packages/")))
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
- 			 ("melpa" . "http://elpa.emacs-china.org/melpa/")))
+;; emacs china被封了
+;; (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+;;  			 ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 (package-initialize)
 
 
